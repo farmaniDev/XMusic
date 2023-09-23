@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.farmani.xmusic.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.farmani.xmusic.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" />
+    <fragment
+        android:id="@+id/allMusicFragment"
+        android:name="com.farmani.xmusic.AllMusicFragment"
+        android:label="fragment_all_music"
+        tools:layout="@layout/fragment_all_music" >
+        <action
+            android:id="@+id/action_allMusicFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteSongsFragment"
+        android:name="com.farmani.xmusic.FavoriteSongsFragment"
+        android:label="fragment_favorite_songs"
+        tools:layout="@layout/fragment_favorite_songs" >
+        <action
+            android:id="@+id/action_favoriteSongsFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.farmani.xmusic.PlayerFragment"
+        android:label="fragment_player"
+        tools:layout="@layout/fragment_player" />
+</navigation>
