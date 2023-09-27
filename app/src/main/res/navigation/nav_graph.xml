@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.farmani.xmusic.SplashScreenFragment"
+        android:name="com.farmani.xmusic.fragments.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="com.farmani.xmusic.ViewPagerFragment"
+        android:name="com.farmani.xmusic.fragments.ViewPagerFragment"
         android:label="fragment_view_pager"
         tools:layout="@layout/fragment_view_pager" />
     <fragment
         android:id="@+id/allMusicFragment"
-        android:name="com.farmani.xmusic.AllMusicFragment"
+        android:name="com.farmani.xmusic.fragments.AllMusicFragment"
         android:label="fragment_all_music"
         tools:layout="@layout/fragment_all_music" >
         <action
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteSongsFragment"
-        android:name="com.farmani.xmusic.FavoriteSongsFragment"
+        android:name="com.farmani.xmusic.fragments.FavoriteSongsFragment"
         android:label="fragment_favorite_songs"
         tools:layout="@layout/fragment_favorite_songs" >
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/playerFragment"
-        android:name="com.farmani.xmusic.PlayerFragment"
+        android:name="com.farmani.xmusic.fragments.PlayerFragment"
         android:label="fragment_player"
         tools:layout="@layout/fragment_player" />
 </navigation>

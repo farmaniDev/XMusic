@@ -1,4 +1,4 @@
-package com.farmani.xmusic
+package com.farmani.xmusic.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.farmani.xmusic.R
 import com.farmani.xmusic.databinding.FragmentSplashScreenBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
