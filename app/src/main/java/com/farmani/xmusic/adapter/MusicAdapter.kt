@@ -34,15 +34,15 @@ class MusicAdapter(var musicList: MutableList<Music>, var context: Context) :
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return musicList.size
-    }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.apply {
             title.text = musicList[position].title
             artist.text = musicList[position].artist
             Glide.with(context).load(musicList[position].coverArtUri).transform(CenterCrop(), RoundedCorners(25)).into(coverArt)
         }
+    }
+
+    override fun getItemCount(): Int {
+        return musicList.size
     }
 }
