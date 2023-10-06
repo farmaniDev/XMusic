@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.farmani.xmusic.R
+import com.farmani.xmusic.currentSong
 import com.farmani.xmusic.model.Music
 
 class MusicAdapter(var musicList: MutableList<Music>, var context: Context) :
@@ -25,6 +27,10 @@ class MusicAdapter(var musicList: MutableList<Music>, var context: Context) :
                 title = findViewById(R.id.titleTV)
                 artist = findViewById(R.id.artistTV)
                 coverArt = findViewById(R.id.coverArt)
+            }
+            view.setOnClickListener{
+                currentSong = musicList[absoluteAdapterPosition]
+                Navigation.findNavController(view).navigate(R.id.action_viewPagerFragment_to_playerFragment)
             }
         }
     }

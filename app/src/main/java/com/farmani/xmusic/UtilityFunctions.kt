@@ -3,10 +3,11 @@ package com.farmani.xmusic
 import android.content.ContentUris
 import android.content.Context
 import android.database.Cursor
-import android.database.DatabaseUtils
 import android.net.Uri
 import android.provider.MediaStore
-import android.util.Log
+import androidx.media3.common.MediaItem
+import androidx.media3.common.Player
+import androidx.media3.exoplayer.ExoPlayer
 import com.farmani.xmusic.model.Music
 
 fun getAllAudioFromDevice(context: Context) {
@@ -43,4 +44,20 @@ fun getAllAudioFromDevice(context: Context) {
         }
         cursor.close()
     }
+}
+
+fun playMusic(context: Context, filePath: String) {
+    val player = ExoPlayer.Builder(context).build()
+    val mediaItem = MediaItem.fromUri(Uri.parse(filePath))
+    player.setMediaItem(mediaItem)
+    player.prepare()
+    player.play()
+    // On multiple click app still works
+    player.addListener(object : Player.Listener {
+        override fun onPlaybackStateChanged(playbackState: Int) {
+            if (playbackState == Player.STATE_ENDED) {
+                player.release()
+            }
+        }
+    })
 }

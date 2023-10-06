@@ -18,25 +18,21 @@
         android:id="@+id/viewPagerFragment"
         android:name="com.farmani.xmusic.fragments.ViewPagerFragment"
         android:label="fragment_view_pager"
-        tools:layout="@layout/fragment_view_pager" />
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/allMusicFragment"
         android:name="com.farmani.xmusic.fragments.AllMusicFragment"
         android:label="fragment_all_music"
-        tools:layout="@layout/fragment_all_music" >
-        <action
-            android:id="@+id/action_allMusicFragment_to_playerFragment"
-            app:destination="@id/playerFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_all_music" />
     <fragment
         android:id="@+id/favoriteSongsFragment"
         android:name="com.farmani.xmusic.fragments.FavoriteSongsFragment"
         android:label="fragment_favorite_songs"
-        tools:layout="@layout/fragment_favorite_songs" >
-        <action
-            android:id="@+id/action_favoriteSongsFragment_to_playerFragment"
-            app:destination="@id/playerFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_favorite_songs" />
     <fragment
         android:id="@+id/playerFragment"
         android:name="com.farmani.xmusic.fragments.PlayerFragment"
