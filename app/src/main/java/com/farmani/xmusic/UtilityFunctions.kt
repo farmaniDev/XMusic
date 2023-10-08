@@ -60,4 +60,6 @@ fun playMusic(context: Context, filePath: String) {
             }
         }
     })
+
+    playerList.add(player)
 }
