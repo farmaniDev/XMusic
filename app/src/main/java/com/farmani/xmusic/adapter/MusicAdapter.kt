@@ -13,6 +13,8 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.farmani.xmusic.R
 import com.farmani.xmusic.currentSong
+import com.farmani.xmusic.fragments.menuItemAllSongs
+import com.farmani.xmusic.fragments.menuItemFavSongs
 import com.farmani.xmusic.model.Music
 
 class MusicAdapter(var musicList: MutableList<Music>, var context: Context) :
@@ -28,9 +30,18 @@ class MusicAdapter(var musicList: MutableList<Music>, var context: Context) :
                 artist = findViewById(R.id.artistTV)
                 coverArt = findViewById(R.id.coverArt)
             }
-            view.setOnClickListener{
+            view.setOnClickListener {
                 currentSong = musicList[absoluteAdapterPosition]
-                Navigation.findNavController(view).navigate(R.id.action_viewPagerFragment_to_playerFragment)
+                if (menuItemAllSongs != null) {
+                    menuItemAllSongs!!.collapseActionView()
+                    menuItemAllSongs!!.isVisible = false
+                }
+                if (menuItemFavSongs != null) {
+                    menuItemFavSongs!!.collapseActionView()
+                    menuItemFavSongs!!.isVisible = false
+                }
+                Navigation.findNavController(view)
+                    .navigate(R.id.action_viewPagerFragment_to_playerFragment)
             }
         }
     }
@@ -44,11 +55,17 @@ class MusicAdapter(var musicList: MutableList<Music>, var context: Context) :
         holder.apply {
             title.text = musicList[position].title
             artist.text = musicList[position].artist
-            Glide.with(context).load(musicList[position].coverArtUri).transform(CenterCrop(), RoundedCorners(25)).into(coverArt)
+            Glide.with(context).load(musicList[position].coverArtUri)
+                .transform(CenterCrop(), RoundedCorners(25)).into(coverArt)
         }
     }
 
     override fun getItemCount(): Int {
         return musicList.size
+    }
+
+    fun filterList(list: MutableList<Music>) {
+        musicList = list
+        notifyDataSetChanged()
     }
 }

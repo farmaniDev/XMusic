@@ -5,5 +5,6 @@ import com.farmani.xmusic.model.Music
 
 val allSongs = mutableListOf<Music>()
 val favSongs = mutableListOf<Music>()
+val mainList = mutableListOf<Music>()
 var currentSong: Music? = null
 var playerList = mutableListOf<Player>()

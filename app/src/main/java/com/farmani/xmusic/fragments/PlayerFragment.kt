@@ -12,6 +12,7 @@ import com.farmani.xmusic.allSongs
 import com.farmani.xmusic.currentSong
 import com.farmani.xmusic.databinding.FragmentPlayerBinding
 import com.farmani.xmusic.favSongs
+import com.farmani.xmusic.mainList
 import com.farmani.xmusic.playMusic
 import com.farmani.xmusic.playerList
 import kotlinx.coroutines.launch
@@ -109,8 +110,8 @@ class PlayerFragment : Fragment() {
         try {
             val index = if (isNextClicked) 1 else -1
             val newSongIndex =
-                allSongs.indexOf(allSongs.find { it.title == currentSong!!.title }) + index
-            currentSong = allSongs[newSongIndex]
+                mainList.indexOf(mainList.find { it.title == currentSong!!.title }) + index
+            currentSong = mainList[newSongIndex]
             playerList.last().stop()
             playLayout.setImageURI(currentSong!!.coverArtUri)
             playMusic(requireContext(), currentSong!!.filePath)
