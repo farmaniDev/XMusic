@@ -8,4 +8,5 @@ data class Music(
     val albumName: String,
     val filePath: String,
     val coverArtUri: Uri,
+    var isFav: Boolean
 )

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/blueGray"
     tools:context=".fragments.PlayerFragment">
 
     <com.cleveroad.play_widget.PlayLayout
         android:id="@+id/playLayout"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,19 +24,20 @@
         app:pw_diffusers_padding="15dp"
         app:pw_image_src="@drawable/pw_image"
 
-        app:pw_medium_diffuser_color="#003399"
-        app:pw_medium_diffuser_shadow_width="25dp"
-
         app:pw_play_button_background_tint="#123456"
         app:pw_progress_ball_color="#01999933"
-        app:pw_progress_ball_radius="4dp"
+        app:pw_progress_ball_radius="4dp">
 
-        app:pw_progress_complete_line_color="#77FFFFFF"
-        app:pw_progress_complete_line_stroke_width="5dp"
-        app:pw_progress_line_color="#34FF0000"
-        app:pw_progress_line_enabled="true"
-        app:pw_progress_line_padding="10dp"
-        app:pw_progress_line_stroke_width="3dp"
-        app:pw_small_diffuser_shadow_width="20dp" />
+    </com.cleveroad.play_widget.PlayLayout>
+
+    <ImageView
+        android:id="@+id/favIV"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/baseline_favorite_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
